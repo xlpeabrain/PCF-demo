@@ -1,9 +1,9 @@
 ---
 applications:
 - name: pcfdemo-map
-  memory: 512M 
+  memory: 750Mb
   instances: 1
-  host: pcfdemo-map-${random-word}
+  random-route: true
   path: ./target/pcfdemo-map.war
   timeout: 90
   env:

@@ -1,9 +1,9 @@
 package io.pivotal.cf.sample
-
-@Grab("org.springframework.amqp:spring-rabbit:1.2.0.RELEASE")
-
-import java.io.IOException;
-import java.util.Iterator;
+@GrabResolver(name='Spring Source', root='http://repo.springsource.org/milestone')
+@GrabResolver(name='Spring Snapshot', root='http://repo.spring.io/snapshot')
+@Grab("org.springframework.amqp:spring-rabbit:2.0.6.RELEASE")
+@Grab("org.springframework.amqp:spring-amqp:2.0.6.RELEASE")
+@Grab('org.springframework.cloud:core:0.9.9.BUILD-SNAPSHOT')
 
 import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;
@@ -16,7 +16,6 @@ import org.springframework.cloud.service.common.RabbitServiceInfo;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.QueueingConsumer;
 
 public class RabbitClient {
 

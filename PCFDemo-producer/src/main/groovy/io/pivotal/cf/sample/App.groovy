@@ -3,16 +3,15 @@ package io.pivotal.cf.sample
 
 @GrabResolver(name='Spring Snapshot', root='http://repo.spring.io/snapshot')
 
-@Grab('org.springframework.cloud:cloudfoundry-connector:0.9.6.BUILD-SNAPSHOT')
-//@Grab('org.springframework.cloud:spring-service-connector:0.9.6.BUILD-SNAPSHOT')
+@Grab('org.springframework.cloud:spring-cloud-cloudfoundry-connector:0.9.12.BUILD-SNAPSHOT')
+@Grab('org.springframework.cloud:spring-cloud-spring-service-connector:0.9.12.BUILD-SNAPSHOT')
 @Grab('com.googlecode.json-simple:json-simple:1.1')
+@Grab('org.springframework.retry:spring-retry:1.2.2.RELEASE')
 
-import java.io.IOException;
-import java.util.Random;
+
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
-import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.cloud.Cloud
 import org.springframework.cloud.CloudFactory
@@ -26,7 +25,6 @@ beans {
 
 @RestController
 @EnableAutoConfiguration
-
 class WebApplication implements CommandLineRunner{
 
 	String[] states = [
