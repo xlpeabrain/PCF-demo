@@ -1,7 +1,7 @@
 ---
 applications:
 - name: pcfdemo
-  memory: 1GB
+  memory: 750MB
   instances: 1
   random-route: true
   path: ./target/pcfdemo.war
