@@ -3,8 +3,8 @@ package io.pivotal.cf.sample
 
 @GrabResolver(name='Spring Snapshot', root='http://repo.spring.io/snapshot')
 
-@Grab('org.springframework.cloud:spring-cloud-cloudfoundry-connector:0.9.12.BUILD-SNAPSHOT')
-@Grab('org.springframework.cloud:spring-cloud-spring-service-connector:0.9.12.BUILD-SNAPSHOT')
+@Grab('org.springframework.cloud:spring-cloud-cloudfoundry-connector:1.2.0.RELEASE')
+@Grab('org.springframework.cloud:spring-cloud-spring-service-connector:1.2.0.RELEASE')
 @Grab('com.googlecode.json-simple:json-simple:1.1')
 @Grab('org.springframework.retry:spring-retry:1.2.2.RELEASE')
 

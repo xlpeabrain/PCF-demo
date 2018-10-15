@@ -3,15 +3,15 @@ package io.pivotal.cf.sample
 @GrabResolver(name='Spring Snapshot', root='http://repo.spring.io/snapshot')
 @Grab("org.springframework.amqp:spring-rabbit:2.0.6.RELEASE")
 @Grab("org.springframework.amqp:spring-amqp:2.0.6.RELEASE")
-@Grab('org.springframework.cloud:core:0.9.9.BUILD-SNAPSHOT')
+@Grab('org.springframework.cloud:core:0.9.9.RELEASE')
 
 import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.springframework.cloud.Cloud;
 import org.springframework.cloud.CloudException;
 import org.springframework.cloud.CloudFactory;
-import org.springframework.cloud.service.ServiceInfo;
-import org.springframework.cloud.service.common.RabbitServiceInfo;
+import org.springframework.cloud.service.ServiceInfo
+import org.springframework.cloud.service.common.AmqpServiceInfo;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -36,9 +36,10 @@ public class RabbitClient {
 	    	Iterator<ServiceInfo> services = cloud.getServiceInfos().iterator();
 	    	while (services.hasNext()){
 	    		ServiceInfo svc = services.next();
-	    		if (svc instanceof RabbitServiceInfo){
-	    			RabbitServiceInfo rabbitSvc = ((RabbitServiceInfo)svc);	    			
-	    			rabbitURI=rabbitSvc.getUri();
+				if (svc instanceof AmqpServiceInfo){
+
+					AmqpServiceInfo svcInfo = ((AmqpServiceInfo)svc);
+					rabbitURI = svcInfo.getUri();
 	    			
 	    			try{
 	    				factory = new ConnectionFactory();
